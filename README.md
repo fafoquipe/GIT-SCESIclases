@@ -1,7 +1,8 @@
 # TRABAJO INDIVIDUAL
 Benjamin Alex Quiroga Perez
-##Preguntas de examen
+Preguntas de examen
 QUE HACE STAGED
+comando ssh-keygen -t ed25519 -C "gmail"
 ## Clase 1
 
 ###Que es GIT?
@@ -73,4 +74,8 @@ git commit
 - add sum function
 - add mult function
 ctrl+o -> x
+
+## CLASE 3
+fue solo GITHUB y con la conexios por SSH del repositorio local con
+es que esta ya subido en mis repos de github
 
