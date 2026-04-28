@@ -1,6 +1,6 @@
 # TRABAJO INDIVIDUAL
 Benjamin Alex Quiroga Perez
-Preguntas de examen
+## Preguntas de examen
 QUE HACE STAGED
 comando ssh-keygen -t ed25519 -C "gmail"
 ## Clase 1
@@ -29,7 +29,7 @@ readme.md (Estamos ahi)
 .Gitignore
 
 
-##Clase 2: STATES Y COMMITS
+## Clase 2: STATES Y COMMITS
 ### Estados de GIT
 1. Directorio de trabajo (modificado)
  Carpeta local
@@ -53,8 +53,8 @@ git restore --staged README.md   esto quita el archivo de staged
 git commit -m "nombre" ->  crea el punto de guardado
 deshacer el ultimo commit git reset --soft HEAD~1
 
-##Buenas prácticas:
-###Cada cuanto hacer commits? 
+### Buenas prácticas:
+Cada cuanto hacer commits? 
 commits atomicos -> pequenios pero funcionales
 commits en ingles y en maximo 50 caracteres
 usar un prefijo 
@@ -78,4 +78,11 @@ ctrl+o -> x
 ## CLASE 3
 fue solo GITHUB y con la conexios por SSH del repositorio local con
 es que esta ya subido en mis repos de github
+
+## CLASE 4
+### GIT REMOTE
+Es el comando que nos permite gestionar conexiones con repositorios remotos
+Git remote -v (url exacta donde apunta el repo)
+git remote add <apodo> "URL" (vincula nuestro repo local con uno en la nube)
+git remote set-url<apodo>"url" cambia la url a la que apunta nuestro repo
 
