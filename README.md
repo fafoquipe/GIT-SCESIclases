@@ -85,4 +85,8 @@ Es el comando que nos permite gestionar conexiones con repositorios remotos
 Git remote -v (url exacta donde apunta el repo)
 git remote add <apodo> "URL" (vincula nuestro repo local con uno en la nube)
 git remote set-url<apodo>"url" cambia la url a la que apunta nuestro repo
+###GIT CHECKOUT
+Ver hacia atras o probar cambios sin arruinar la rama principal
+git checkout (hash)
+el hash se obtiene con git log --oneline
 
