@@ -1,6 +1,6 @@
 # APUNTES GIT - BENJAMIN QUIROGA
 
-## PREGUNTAS DE EXAMEN (CUIDADO)
+## PREGUNTAS DE EXAMEN 
 * Que es un commit? Un punto de guardado en el historial con un ID unico (hash).
 * Para que sirve el .gitignore? Para evitar trackear archivos sensibles (.env) o basura (node_modules).
 * Diferencia entre git restore y git restore --staged? El primero borra cambios en el working directory, el segundo solo saca el archivo de staging.
@@ -34,7 +34,7 @@
 * git restore --staged README.md -> Quita el archivo del staged y lo devuelve a modified.
 * git commit -m "prefijo: mensaje" -> Crea el punto de guardado oficial.
 * git reset --soft HEAD~1 -> Borra el ultimo commit pero te deja los archivos como estaban para corregir algo.
-### Commits Atomicos (Prefijos)
+### Commits Atomicos 
 * feat: nueva feature; fix: arregla bug; docs: documentacion; refactor: limpieza de codigo.
 * Maximo 50 caracteres y en ingles si se puede.
 * git commit (a secas) -> Abre el editor (como nano) para poner titulo y descripcion con mas detalle.
@@ -61,7 +61,7 @@
 
 ---
 
-## Clase 5: BRANCHES (RAMAS)
+## Clase 5: BRANCHES 
 ### Conceptos de la Clase
 * Una rama es una linea de tiempo independiente.
 * Por que usarlas? Permiten el trabajo en paralelo y protegen el codigo estable de produccion.
@@ -87,7 +87,7 @@
 * git merge <nombre-rama> -> Fusiona la rama indicada en la rama donde estas parado actualmente.
 * git merge --abort -> Si el merge se pone muy feo y quieres cancelar todo para volver a como estabas antes.
 
-### Conflictos (Cuando todo explota)
+### Conflictos 
 * Por que pasa? Cuando dos personas (o tu mismo en dos ramas) tocan la misma linea del mismo archivo.
 * Como arreglarlo:
   1. Git detiene el merge y te dice que archivos fallaron.
@@ -122,13 +122,13 @@
 ---
 
 ## Clase 8: COMANDOS AVANZADOS Y LIMPIEZA
-### Git Stash (Cajon de sastre)
+### Git Stash 
 * Para que sirve? Para guardar cambios temporalmente sin hacer commit porque tienes que cambiar de rama rapido.
 * git stash -> Guarda tus cambios actuales en un "limbo" y deja el working directory limpio.
 * git stash list -> Muestra la lista de cosas que tienes guardadas.
 * git stash pop -> Recupera los cambios guardados y los borra del stash.
 
-### Git Rebase (La alternativa al Merge)
+### Git Rebase 
 * Que es? Es otra forma de integrar cambios. En lugar de crear un commit de fusion, "reescribe" la historia para que parezca que todo paso en una sola linea.
 * git rebase main -> Pone tus cambios por encima de lo ultimo que haya en main. Queda mucho mas limpio pero es peligroso en ramas compartidas.
 
