@@ -1,92 +1,58 @@
-# TRABAJO INDIVIDUAL
-Benjamin Alex Quiroga Perez
-## Preguntas de examen
-QUE HACE STAGED
-comando ssh-keygen -t ed25519 -C "gmail"
-## Clase 1
+# APUNTES GIT - BENJAMIN QUIROGA
 
-###Que es GIT?
-Es un sistema de control de versiones distribuidos, creando puntos de 
-guardado y tener un control de versiones
-### Como nacio GIT?
-Linus Tolvas revisaba a mano todos los emails y se cansaba Usa 
-BitKeeper, pero quitan su repositorio
-se encierra en su habitacion 2 semanas y crea GIT
-### Como se instala git?
-no tomare apuntes de esto porque ya lo tengo XD
-### Comandos basicos de GIT
-git config global suer.name "Nombre"
-git config --global user.email "Correo"
-git config --global core.autocrlf true
-git config --list
-git config --global --list
-git --version
-### sistema de puntuacion XD
-nada tampoco
-### Archivos que todo repo deberia tener
-Ese Diego con el Ridmi (video) 
-readme.md (Estamos ahi)
-.Gitignore
+## PREGUNTAS DE EXAMEN
+* Que es un commit? Un punto de guardado en el historial con un ID unico (hash)[cite: 5].
+* Para que sirve el .gitignore? Para evitar trackear archivos sensibles (.env) o basura (node_modules)[cite: 5].
+* Diferencia entre git restore y git restore --staged? El primero borra cambios en el working directory, el segundo solo saca el archivo de staging[cite: 5].
+* Como ver el historial simplificado? git log --oneline[cite: 5].
+* Que hace el git reset --soft? Borra el commit pero mantiene tus cambios en los archivos[cite: 5].
 
+---
+
+## Clase 1: CONFIGURACION INICIAL
+* Configurar identidad: 
+  git config --global user.name "Benjamin Quiroga"[cite: 5]
+  git config --global user.email "tu@correo.com"[cite: 5]
+  git config --global core.autocrlf true[cite: 5]
+* Inicializar repo: git init (crea la carpeta oculta .git)[cite: 5].
+* Archivos clave: README.md (documentacion) y .gitignore (para lo que no quieres que suba a la nube)[cite: 5].
+
+---
 
 ## Clase 2: STATES Y COMMITS
 ### Estados de GIT
-1. Directorio de trabajo (modificado)
- Carpeta local
-2. Stage area
- Preparado (voy a guardar estas cosas)
-3. Commited (confirmado)
- Git crea un punto de guardado y ya estan en el historial (Ya son accesibles)
-### Directorio de trabajo
-git no hace nada como tal, solo los clasifica como
-Untracked : Aparecio de la nada
-Modified: Git mira un cambio en un archivo creado anteriormente
-git restore -> permite volver al estado anterior o elimina cambios 
-git restore aplicado a un archivo borrado, este se desborra XD
-touch .env (credenciales) ---> .gitignore contiene los archivos 
-que no quieres subir
-git add (Nombre del archivo) (.gitignore si quieres guardar)
-pasas de modifies a stagged
-git add . (se agrega TODO)
-git restore --staged README.md   esto quita el archivo de staged 
-(vuelve a modified)
-git commit -m "nombre" ->  crea el punto de guardado
-deshacer el ultimo commit git reset --soft HEAD~1
+1. Directorio de trabajo: Carpeta local (modificado)[cite: 5].
+2. Stage area: Preparado (limbo antes de guardar)[cite: 5].
+3. Commited: Confirmado (ya esta en el historial y es accesible)[cite: 5].
+### Comandos y Practica
+* Untracked: Archivo nuevo que git no conoce[cite: 5].
+* Modified: Archivo viejo con cambios nuevos[cite: 5].
+* git restore <archivo> -> Vuelve al estado anterior o desborra archivos (XDD)[cite: 5].
+* git add . -> Pasas todo de modified a staged (al limbo)[cite: 5].
+* git restore --staged README.md -> Quita el archivo del staged y lo devuelve a modified[cite: 5].
+* git commit -m "prefijo: mensaje" -> Crea el punto de guardado oficial[cite: 5].
+* git reset --soft HEAD~1 -> Borra el ultimo commit pero te deja los archivos como estaban para corregir algo[cite: 5].
+### Commits Atomicos (Prefijos)
+* feat: nueva feature; fix: arregla bug; docs: documentacion; refactor: limpieza de codigo[cite: 5].
+* Maximo 50 caracteres y en ingles si se puede[cite: 5].
+* git commit (a secas) -> Abre editor para poner titulo y descripcion con mas detalle[cite: 5].
 
-### Buenas prácticas:
-Cada cuanto hacer commits? 
-commits atomicos -> pequenios pero funcionales
-commits en ingles y en maximo 50 caracteres
-usar un prefijo 
-fit nueva caracteristica
-fix arregla un bug
-perf mejora en rendimiento
-build cambios en el sistema deployed
-ci cambios en la integracion continua
-docs para cambios en la documentacion
-refactor cambio de nombre de variables 
-test es un test
-si auxi, usare docs :(
-git add script
-como darle mas contexto? 
-git commit 
-(abre el editor) feat: add math operations -> titulo
-- add sum function
-- add mult function
-ctrl+o -> x
+---
 
-## CLASE 3
-fue solo GITHUB y con la conexios por SSH del repositorio local con
-es que esta ya subido en mis repos de github
+## Clase 3: GITHUB Y SSH
+* Para no poner contraseña cada vez que haces push se usa SSH[cite: 5].
+* Generas la llave en tu PC y la pegas en la config de GitHub[cite: 5].
+* Esto vincula tu maquina con tu cuenta de forma segura[cite: 5].
 
-## CLASE 4
+---
+
+## Clase 4: REMOTES Y CHECKOUT
 ### GIT REMOTE
-Es el comando que nos permite gestionar conexiones con repositorios remotos
-Git remote -v (url exacta donde apunta el repo)
-git remote add <apodo> "URL" (vincula nuestro repo local con uno en la nube)
-git remote set-url<apodo>"url" cambia la url a la que apunta nuestro repo
-###GIT CHECKOUT
-Ver hacia atras o probar cambios sin arruinar la rama principal
-git checkout (hash)
-el hash se obtiene con git log --oneline
+* Para volver al presente: git checkout main[cite: 5].
+* Sirve para viajar en el tiempo o probar cosas sin romper la rama main[cite: 5].
+* git log --oneline -> Sacas el hash corto (ej: a1b2c3d)[cite: 5].
+* git checkout <hash> -> Te mueve a ese estado especifico del pasado para revisar codigo[cite: 5].
+* Permite gestionar conexiones con servidores en la nube[cite: 5].
+* git remote -v -> Te da la URL exacta (fetch y push) a donde apunta tu repo[cite: 5].
+* git remote add origin <URL> -> Vincula tu carpeta local con el repositorio vacio de GitHub[cite: 5].
 
