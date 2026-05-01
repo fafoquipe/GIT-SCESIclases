@@ -56,3 +56,21 @@
 * git remote -v -> Te da la URL exacta (fetch y push) a donde apunta tu repo[cite: 5].
 * git remote add origin <URL> -> Vincula tu carpeta local con el repositorio vacio de GitHub[cite: 5].
 
+---
+
+## Clase 5: BRANCHES (RAMAS)
+### Conceptos de la Clase
+* Que es una rama? Una linea de tiempo independiente para experimentar sin arruinar main.
+* El puntero HEAD: Es el indicador que te dice en que rama o commit estas parado actualmente[cite: 5].
+* Por que usarlas? Permiten el trabajo en paralelo y protegen el codigo estable de produccion[cite: 5].
+
+### Comandos de Terminal
+* git branch -> Lista todas las ramas locales (la que tiene el * es tu posicion actual)[cite: 5].
+* git branch <nombre> -> Crea una rama nueva pero te deja donde estas parado[cite: 5].
+* git switch <nombre> -> Te mueve a la rama indicada (mueve el HEAD)[cite: 5].
+* git switch -c <nombre> -> Atajo para crear la rama y saltar a ella de una sola vez[cite: 5].
+* git branch -d <nombre> -> Borra la rama (solo si ya fusionaste los cambios a main)[cite: 5].
+* git branch -D <nombre> -> Borrado forzado (borra la rama aunque tenga cambios no guardados)[cite: 5].
+* git merge <nombre-rama> -> Trae los cambios de la rama indicada hacia la rama donde estas parado[cite: 5].
+
+---
