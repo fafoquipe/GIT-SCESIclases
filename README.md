@@ -120,3 +120,21 @@
 * No pushear directo a main; siempre usar ramas y Pull Requests para mantener el codigo limpio.
 
 ---
+
+## Clase 8: COMANDOS AVANZADOS Y LIMPIEZA
+### Git Stash (Cajon de sastre)
+* Para que sirve? Para guardar cambios temporalmente sin hacer commit porque tienes que cambiar de rama rapido.
+* git stash -> Guarda tus cambios actuales en un "limbo" y deja el working directory limpio.
+* git stash list -> Muestra la lista de cosas que tienes guardadas.
+* git stash pop -> Recupera los cambios guardados y los borra del stash.
+
+### Git Rebase (La alternativa al Merge)
+* Que es? Es otra forma de integrar cambios. En lugar de crear un commit de fusion, "reescribe" la historia para que parezca que todo paso en una sola linea.
+* git rebase main -> Pone tus cambios por encima de lo ultimo que haya en main. Queda mucho mas limpio pero es peligroso en ramas compartidas.
+
+### Limpieza y Tags
+* git clean -f -> Borra archivos que NO estan trackeados (cuidado, esto no se recupera).
+* git tag -a v1.0 -m "Version final" -> Le pone una "etiqueta" a un commit importante (como un lanzamiento).
+* git commit --amend -> Para editar el mensaje del ultimo commit si te equivocaste al escribirlo.
+
+---
