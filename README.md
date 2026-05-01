@@ -76,3 +76,28 @@
 * git merge <nombre-rama> -> Trae los cambios de la rama indicada hacia la rama donde estas parado.
 
 ---
+
+---
+
+## Clase 6: FUSIONES (MERGE) Y CONFLICTOS
+### El Proceso de Merge
+* Que es un Merge? Es unir dos lineas de tiempo (ramas). Traes los cambios de una rama a la que tienes activa.
+* Fast-Forward: Si la rama main no se movio, Git solo "mueve el puntero" hacia adelante. Es el merge mas limpio.
+* Merge Commit: Si ambas ramas avanzaron, Git crea un nuevo commit de union para juntar las dos historias.
+
+### Comandos de Terminal
+* git merge <nombre-rama> -> Fusiona la rama indicada en la rama donde estas parado actualmente.
+* git merge --abort -> Si el merge se pone muy feo y quieres cancelar todo para volver a como estabas antes.
+
+### Conflictos (Cuando todo explota)
+* Por que pasa? Cuando dos personas (o tu mismo en dos ramas) tocan la misma linea del mismo archivo.
+* Como arreglarlo:
+  1. Git detiene el merge y te dice que archivos fallaron.
+  2. Abres el archivo en nano y veras las marcas:
+     <<<<<<< HEAD (lo que tu tienes)
+     ======= (separador)
+     >>>>>>> rama-colaborador (lo que viene de afuera)
+  3. Borras las marcas y dejas solo el codigo que sirve.
+  4. git add . y git commit -> Para confirmar que ya arreglaste el choque.
+
+---
