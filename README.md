@@ -77,8 +77,6 @@
 
 ---
 
----
-
 ## Clase 6: FUSIONES (MERGE) Y CONFLICTOS
 ### El Proceso de Merge
 * Que es un Merge? Es unir dos lineas de tiempo (ramas). Traes los cambios de una rama a la que tienes activa.
@@ -94,10 +92,31 @@
 * Como arreglarlo:
   1. Git detiene el merge y te dice que archivos fallaron.
   2. Abres el archivo en nano y veras las marcas:
+
      <<<<<<< HEAD (lo que tu tienes)
+
      ======= (separador)
+
      >>>>>>> rama-colaborador (lo que viene de afuera)
+
   3. Borras las marcas y dejas solo el codigo que sirve.
   4. git add . y git commit -> Para confirmar que ya arreglaste el choque.
+
+---
+
+## Clase 7: REMOTOS Y PULL REQUESTS (PR)
+### Flujo de Trabajo en la Nube
+* Que es un Pull Request (PR)? No es un comando de git, es una herramienta de GitHub para pedir permiso antes de meter tus cambios a la rama principal.
+* Para que sirve el PR? Para que otros revisen tu codigo, comenten y den el "visto bueno" antes del merge final.
+
+### Comandos de Sincronizacion
+* git push origin <nombre-rama> -> Sube tus commits locales al repositorio en GitHub.
+* git fetch -> Descarga la informacion de la nube pero NO toca tus archivos locales. Sirve para ver que hicieron los demas.
+* git pull -> Es un git fetch + git merge. Descarga todo y lo intenta unir a tus archivos de una. Cuidado con los conflictos aqui.
+* git remote prune origin -> Limpia las referencias locales de ramas que ya fueron borradas en GitHub.
+
+### Buenas Practicas
+* Siempre hacer un git pull antes de empezar a trabajar para tener lo ultimo del equipo.
+* No pushear directo a main; siempre usar ramas y Pull Requests para mantener el codigo limpio.
 
 ---
